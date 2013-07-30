@@ -696,10 +696,10 @@ module Net
   # class aliases
   saved_verbosity = $-v
   $-v = nil
-  POP = POP3
-  POPSession  = POP3
-  POP3Session = POP3
-  APOPSession = APOP
+  Net.instance_eval {remove_const :POP} if defined?(POP)         # POP = POP3
+  Net.instance_eval {remove_const :POPSession} if defined?(POPSession)# POPSession  = POP3
+  Net.instance_eval {remove_const :POP3Session} if defined?(POP3Session)# POP3Session = POP3
+  Net.instance_eval {remove_const :APOPSession} if defined?(APOPSession)# APOPSession = APOP
   $-v = saved_verbosity
 
   #
