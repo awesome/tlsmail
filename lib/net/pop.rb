@@ -196,7 +196,7 @@ module Net
   # 
   class POP3 < Protocol
 
-    Revision = %q$Revision: 6285 $.split[1]
+    Net.instance_eval {remove_const :Revision} if defined?(Revision)  # Revision = %q$Revision: 6285 $.split[1]
 
     #
     # Class Parameters
